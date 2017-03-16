@@ -1,6 +1,11 @@
 import { PropTypes } from 'react';
+import entries from 'object.entries';
 import shape from './shape';
 import wrapValidator from './helpers/wrapValidator';
+
+if (!Object.entries) {
+  entries.shim();
+}
 
 function number(props, propName, componentName) {
   const value = props[propName];
